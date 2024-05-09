@@ -1,0 +1,109 @@
+1) What is Docker?
+-> Docker is an open platform for developing , shipping and running application.
+-> Docker is a platform which packages an application and all its dependencies together in the form of containers
+
+2) Before Docker What Problem are facing by developer when he build a application/website?
+-> Before Docker, if we wanted to run a project on a different machine, we had to set up all the dependencies including libraries, configs, and services like databases or cache.
+
+3) What Problem Docker Solve?
+-> Docker Allow developer to package an application and its dependencies into a container that can be run on any system that support Docker. This ensures that the application run consistently across different environment, eliminating the "IT WORKS ON MY MACHINE PROBLEM"
+
+4) Docker works?
+-> Docker is a containerization platform that allows you to package up your application and all of its dependencies into a single unit that can be run on any machine. This makes it easy to deploy and manage your applications, as you don't have to worry about the underlying operating system or environment.
+
+Docker works by using a technology called containers. Containers are isolated environments that share the underlying operating system kernel. This means that each container has its own filesystem, process space, and network interface, but it shares the same kernel as the other containers on the machine. This makes containers very lightweight and efficient, as they don't need to include their own operating system.
+
+To create a Docker container, you first need to create a Dockerfile. A Dockerfile is a text file that contains instructions for building a Docker image. A Docker image is a template that can be used to create multiple Docker containers.
+
+Once you have created a Dockerfile, you can build a Docker image using the Docker CLI. The Docker CLI is a command-line tool that allows you to manage Docker containers and images.
+Once you have built a Docker image, you can run it using the Docker CLI. When you run a Docker image, Docker creates a new container based on the image. The container will then start running the application that is packaged in the image.
+
+You can stop and start Docker containers using the Docker CLI. You can also remove Docker containers using the Docker CLI.
+
+Docker is a powerful tool that can help you to deploy and manage your applications more easily. It is a popular choice for developers and DevOps teams, as it makes it easy to package up applications and run them on any machine.
+
+Here are some of the benefits of using Docker:
+
+Portability:
+Docker containers can be run on any machine that has the Docker CLI installed. This makes it easy to deploy your applications to different environments, such as development, testing, and production.
+
+Efficiency:
+Docker containers are very lightweight and efficient, as they share the underlying operating system kernel. This makes them a good choice for running applications on resource-constrained machines.
+
+Isolation:
+Docker containers are isolated from each other, which means that an application running in one container will not affect the applications running in other containers. This makes it easy to run multiple applications on the same machine without having to worry about them interfering with each other.
+
+Scalability:
+Docker makes it easy to scale your applications up or down. You can simply start or stop more containers as needed.
+If you are looking for a way to deploy and manage your applications more easily, Docker is a great option. It is a powerful tool that can help you to save time and resources.
+
+5) Docker And Its architecture?
+
+->
+                              -------------------------
+                             |                         |
+                             |        Hardware         |
+                             |                         |
+                              -------------------------
+                             |                         |
+                             |  Host Operating System  |
+                             |                         |
+                              -------------------------
+                             |                         |
+                             |     Docker Engine       |
+                             |                         |
+                              -------------------------
+                                  ||             ||
+                                  \/             \/
+                           --------------   --------------
+                          |      App     | |     App      |
+                          | Dependencies | | Dependencies |
+                          |              | |              |
+                           -------------    --------------
+                             container         container
+
+6) What is Docker Engine?
+-> Docker Engine is an open source containerization technology for building and containerizing your applications.
+-> Docker Engine acts as a client-server application with: A server with a long-running daemon process dockerd . APIs which specify interfaces that programs can use to talk to and instruct the Docker daemon.
+
+
+7) DockerFile,Image,Container?
+->
+
+DockerFile:- Text Document which contain all the command that a user can call on the command line to assemble an image.
+
+DockerImage:- Tempate to create docker container.
+
+Docker Container:-Running instance of the docker image.Container hold entire package to run application
+
+8) Process to Follow to make/build Docker Container
+-> 
+
+  ---------------------              --------------------                ----------------
+ |                     |   build    |                   |      Run      |                |
+ |    Dockerfile       | ---------> |   Docker Image    | ------------> |Docker Container|
+ |                     |            |                   |               |                |               
+  ---------------------              -------------------                 ----------------
+
+9) What is Wsl in Docker?
+-> 
+
+WSL stands for Windows Subsystem for Linux. It is a compatibility layer for running Linux distributions natively on Windows. WSL 2, the latest version of WSL, is a full Linux kernel built by Microsoft, which lets Linux distributions run without managing virtual machines.
+
+Docker is a platform for developing, shipping, and running applications in containers. 
+
+Containers are isolated environments that package up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.
+
+Docker Desktop for Windows with WSL 2 backend allows you to run Docker containers on Windows using a Linux environment. This means that you can use the same Docker commands and tools that you would use on a Linux machine.
+
+To use Docker with WSL 2, you need to install Docker Desktop for Windows and enable the WSL 2 backend. Once you have done this, you can start running Docker containers from the Windows command line or from within a Linux distribution running on WSL 2.
+
+Here are some of the benefits of using Docker with WSL 2:
+
+You can use the same Docker commands and tools that you would use on a Linux machine.
+You can develop and run Docker containers in a Linux environment, which can be helpful if you are using Linux-specific tools or libraries.
+
+You can use Visual Studio Code for code editing and debugging, and run your container in the Microsoft Edge browser on Windows.
+
+Overall, Docker with WSL 2 is a powerful combination that allows you to develop and run Docker containers on Windows using a Linux environment. This can be helpful for developers who want to use the same Docker commands and tools that they would use on a Linux machine, or who need to develop and run Docker containers in a Linux environment.
+
