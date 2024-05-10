@@ -1,4 +1,43 @@
 Some Important Command in Docker
 
+
+Docker Hub For pull the Images into Container
+
+//Version Checked
 1) docker -v
-2)
+
+//push image into container
+2) docker pull hello-world
+
+//For Checking How many Images in Container
+3) docker images
+
+//for Download the images need to version acc to need 
+4) docker pull openjdk:18
+
+//for Searching the image in docker
+5) docker search MySQL
+
+//Run images into container 
+6) docker run python
+
+//Check Container is exist or not 
+7) docker ps
+
+// Check Container Image 
+8) docker ps -a
+
+//continous running container
+9) docker run --evn MYSQL_ROOT_PASSWORD=
+
+//Detach use
+10) docker run --detach
+
+//Write the container name
+11) docker run --name pythonContainer -d python/id
+
+//for interative mode 
+12)docker run --name pythonContainer1 -t -d python
+
+//move into container
+13)docker exec -it <ImageName/Id>
