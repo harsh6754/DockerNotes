@@ -64,7 +64,7 @@ If you are looking for a way to deploy and manage your applications more easily,
 
 6) What is Docker Engine?
 -> Docker Engine is an open source containerization technology for building and containerizing your applications.
--> Docker Engine acts as a client-server application with: A server with a long-running daemon process dockerd . APIs which specify interfaces that programs can use to talk to and instruct the Docker daemon.
+-> Docker Engine acts as a client-server application with: A server with a long-running daemon process docker . APIs which specify interfaces that programs can use to talk to and instruct the Docker daemon.
 
 
 7) DockerFile,Image,Container?
@@ -212,9 +212,11 @@ Some Basic Command use to Create a docker file , docker image and docker Contain
 
 14) "docker build -t[Tags]<image-name>:<image-version> ." is use to naming image name and tags and create new image 
 
-15) "docker rmi <image-name>:<image-tag> is use to remove image into the docker desktop
+15) "docker rmi <image-name>:<image-tag>" is use to remove image into the docker desktop
 
-16) "docker run -d --rm --name <container-name> -p 3000:3000 <Image-name>:<image-tag>/<image-id> is use to run the container
+16) "docker run -d --rm --name <container-name> -p 3000:3000 <Image-name>:<image-tag>/<image-id>" is use to run the container.
+
+17) "docker pull <image-image>" this command is use pre-define image which are already exist in docker-Hub.
 
 
 Q 16) What is detach mode in docker?
@@ -226,7 +228,7 @@ Detached mode in Docker is a way to run a container in the background. This is u
 To start a container in detached mode, use the -d or --detach
 
 
-Q 17) if in previous u create one image aftr creating image u change some conatine into project what is the process to change into the image.
+Q 17) if in previous u create one image after creating image u change some container into project what is the process to change into the image.
 
 Ans -> 
 
@@ -256,6 +258,42 @@ docker rmi myapp:01
 docker rmi is the command to remove an image.
 myapp:01 is the name and tag of the old image that you want to remove.
 By following these steps, you can ensure that your Docker images are updated with the latest changes from your project, and you can keep your Docker environment clean by removing outdated images.
+
+Q 18) Pre-defined Images in Dockers?
+
+Ans->
+
+A Docker image is a read-only template that contains instructions for creating a Docker container. It includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+
+Pre-defined images, also known as base images, are images that have already been created and are available for use. They can be found on Docker Hub, a public registry of Docker images.
+
+There are many benefits to using pre-defined images:-
+
+They save time and effort, as you don't have to create your own image from scratch.
+They are often more reliable and secure than custom images, as they have been created by experts.
+They can be used to create consistent environments for your applications, which can help to improve performance and reliability.
+To use a pre-defined image, you simply need to pull it from Docker Hub. Once you have pulled the image, you can create a container from it.
+
+Here are some examples of pre-defined images:-
+Ubuntu: A popular Linux distribution that is often used as a base image for other images.
+Nginx: A web server that is often used to serve static files and dynamic content.
+MySQL: A database server that is often used to store data for web applications.
+Python: A programming language that is often used to develop web applications and machine learning models.
+You can find more pre-defined images on Docker Hub.
+
+Q 19) What is customization image?
+
+Ans -> 
+
+Image customization is a tool for creating variations of original images without duplicating them.
+
+                                       OR
+
+A images created by own using docker command is called customization image.
+
+
+
+
 
 
 
