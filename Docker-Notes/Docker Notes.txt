@@ -15,7 +15,7 @@ Docker works by using a technology called containers. Containers are isolated en
 
 To create a Docker container, you first need to create a Dockerfile. A Dockerfile is a text file that contains instructions for building a Docker image. A Docker image is a template that can be used to create multiple Docker containers.
 
-Once you have created a Dockerfile, you can build a Docker image using the Docker CLI. The Docker CLI is a command-line tool that allows you to manage Docker containers and images.
+Once you have created a Docker file, you can build a Docker image using the Docker CLI. The Docker CLI is a command-line tool that allows you to manage Docker containers and images.
 Once you have built a Docker image, you can run it using the Docker CLI. When you run a Docker image, Docker creates a new container based on the image. The container will then start running the application that is packaged in the image.
 
 You can stop and start Docker containers using the Docker CLI. You can also remove Docker containers using the Docker CLI.
@@ -72,9 +72,9 @@ If you are looking for a way to deploy and manage your applications more easily,
 
 DockerFile:- Text Document which contain all the command that a user can call on the command line to assemble an image.
 
-DockerImage:- Tempate to create docker container.
+DockerImage:- Template to create docker container.
 
-Docker Container:-Running instance of the docker image.Container hold entire package to run application
+Docker Container:-Running instance of the docker image Container hold entire package to run application
 
 8) Process to Follow to make/build Docker Container
 -> 
@@ -85,7 +85,7 @@ Docker Container:-Running instance of the docker image.Container hold entire pac
  |                     |            |                   |               |                |               
   ---------------------              -------------------                 ----------------
 
-9) What is Wsl in Docker?
+9) What is Wsl (Window Sub-system for Linux) in Docker?
 -> 
 
 WSL stands for Windows Subsystem for Linux. It is a compatibility layer for running Linux distributions natively on Windows. WSL 2, the latest version of WSL, is a full Linux kernel built by Microsoft, which lets Linux distributions run without managing virtual machines.
@@ -106,4 +106,164 @@ You can develop and run Docker containers in a Linux environment, which can be h
 You can use Visual Studio Code for code editing and debugging, and run your container in the Microsoft Edge browser on Windows.
 
 Overall, Docker with WSL 2 is a powerful combination that allows you to develop and run Docker containers on Windows using a Linux environment. This can be helpful for developers who want to use the same Docker commands and tools that they would use on a Linux machine, or who need to develop and run Docker containers in a Linux environment.
+
+
+Q10) What is a Docker?
+
+Ans-> 
+
+Docker is a Containerization platform for developing, packaging, shipping, and running application.
+
+It Provide the ability to run an application in an isolated environment called a container.
+
+Makes deployment and development easier.
+
+Q11) What is Container?
+
+Ans-> 
+
+Containers are an abstraction at the app layer that packages code and dependencies together. 
+Multiple containers can run on the same machine and share the OS kernel with other containers, 
+each running as isolated processes in user space.
+
+                                      
+                                       Or
+
+A way to package an application with all the necessary dependencies and configuration,
+
+It can be easily shared
+
+Makes deployment and development efficient
+
+
+Q12) Difference between Docker Container And Virtual Machine
+Ans->
+
+ ----------------------------------------------- --------------------------------------------------
+|                                               |                                                  |
+|               Docker Container                |                 Virtual Machine                  |
+|                                               |                                                  |
+ ----------------------------------------------- --------------------------------------------------
+|  Low Impact on Os, Very fast, low disk        | High Impact on Os, slower, high disk space usage |
+|  space usage                                  |                                                  |
+|                                               |                                                  |
+|  Sharing,re-building and distribution easy    | Sharing,re-building and distribution is          |
+|                                               | challenging.                                     |
+|  Encapsulate apps instead of whole machine    |                                                  |
+|                                               | Encapsulate whole machine                        |
+ ----------------------------------------------- --------------------------------------------------
+
+
+Q13) Main Components of Dockers?
+
+Ans -> 1) Docker-File  2) Docker-Image 3) Docker-Container 4)Docker-Registry
+
+Docker-File:- It is a simple text file with instruction to build image called Docker Files
+
+Docker-Image:-Single File with all the dep. and lib. to run the program called Docker Images
+
+Docker-Container:- Instance of an Image is Called Container.
+
+Docker-Registry:- A Docker registry is a central repository for storing and distributing Docker Image
+
+
+Q14) What is Docker-Hub Uses of Docker-hub?
+
+Ans-> 
+Docker Hub is a container registry built for developers and open source contributors to find, use, and share their container images.
+With Hub, developers can host public repos that can be used for free, or private repos for teams and enterprises.
+
+
+Q15) Difference Registry vs Repository?
+Ans->
+
+Registry:-a registry is a collection of repositories, 
+
+Repository:- while repositories hold a collection of related images
+
+
+Some Basic Command use to Create a docker file , docker image and docker Container.
+
+1) "docker build ." is use to build docker file.
+
+2) "docker run <image id" use to run docker image
+
+3) "docker ps" is use to check the present running state
+
+4) "docker stop <container name> to stop container
+
+5) "docker image ls is use to check the images in docker desktop
+
+6) "docker run -p 3000:3000 <image-id">use to run project on that port
+
+7) "docker run -d -p 3000:3000 <image-id> use to run container into detach mode
+
+8) "docker run -d -p 3001:3000 <image-id> use to run same  container into different port number
+
+9) "docker ps -a" to use to show all container 
+
+10) "docker rm <Container-name> to remove container into docker desktop(but before remove stop that container)
+
+11) "docker rm <container-name1> <container-name2> ... <container-name n> to remove multiple container at a time
+
+12) "docker run -d --rm -p 3000:3000 <image-id> is use when run this command container running  when use "docker stop <container name>" this command auto delete container from docker desktop
+
+13) "docker run -d --rm --name "<write container name>" -p 3000:3000 <image-id>
+
+14) "docker build -t[Tags]<image-name>:<image-version> ." is use to naming image name and tags and create new image 
+
+15) "docker rmi <image-name>:<image-tag> is use to remove image into the docker desktop
+
+16) "docker run -d --rm --name <container-name> -p 3000:3000 <Image-name>:<image-tag>/<image-id> is use to run the container
+
+
+Q 16) What is detach mode in docker?
+
+Ans -> 
+
+Detached mode in Docker is a way to run a container in the background. This is useful for long-running tasks, such as web servers or databases. When you run a container in detached mode, it does not occupy the terminal.
+
+To start a container in detached mode, use the -d or --detach
+
+
+Q 17) if in previous u create one image aftr creating image u change some conatine into project what is the process to change into the image.
+
+Ans -> 
+
+Create a New Image: Use the docker build command to build a new image that includes your changes.
+
+Command: docker build -t <image-name>:<image-version> .
+Example: docker build -t myapp:02 .
+This command will create a new image with the specified name and tag, incorporating all the updates in your project.
+Remove the Previous Image: Once the new image is created and you have verified it works as expected, you can remove the old image to free up space.
+
+Command: docker rmi <image-name>:<image-tag>
+Example: docker rmi myapp:01
+Detailed Steps
+Build the New Image:
+
+
+Copy code
+docker build -t myapp:02 .
+docker build is the command to create a new image.
+-t myapp:02 assigns a name (myapp) and a tag (02) to the new image.
+. specifies the current directory as the build context.
+Remove the Old Image:
+
+bash
+Copy code
+docker rmi myapp:01
+docker rmi is the command to remove an image.
+myapp:01 is the name and tag of the old image that you want to remove.
+By following these steps, you can ensure that your Docker images are updated with the latest changes from your project, and you can keep your Docker environment clean by removing outdated images.
+
+
+
+
+
+
+
+
+
+
 
